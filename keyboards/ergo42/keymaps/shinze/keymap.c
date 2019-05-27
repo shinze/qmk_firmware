@@ -4,11 +4,13 @@
 
 extern keymap_config_t keymap_config;
 
-#define BASE 0
-#define NUMB 1
-#define SHORT 2
+enum custom_keycodes {
+  BASE,
+  NUMB,
+  SHORT
+};
 
-// Special keys
+// Command keys
 #define COPY     RGUI(BP_C)
 #define PASTE    RGUI(BP_V)
 
@@ -17,8 +19,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT( \
     KC_TAB,    BP_B,    BP_ECUT, BP_P,    BP_O,    BP_EGRV, KC_ESC,      KC_BSPC, BP_DCRC, BP_V,    BP_D,    BP_L,    BP_J,    BP_Z,    \
     BP_W,      BP_A,    BP_U,    BP_I,    BP_E,    BP_COMM, _______,     _______, BP_C,    BP_T,    BP_S,    BP_R,    BP_N,    BP_M,    \
-    KC_LSFT,   BP_AGRV, BP_Y,    BP_X,    BP_DOT,  BP_K,    _______,     _______, BP_APOS, BP_Q,    BP_G,    BP_H,    BP_F,    BP_CCED, \
-    MO(SHORT), KC_LCTL, _______, KC_LALT, KC_LGUI, KC_SPC,  MO(NUMB),    KC_RGUI, KC_RSFT, KC_SPC,  _______, _______, _______, _______  \
+    KC_LSFT,   BP_AGRV, BP_Y,    BP_X,    BP_DOT,  BP_K,    KC_SPC,      KC_ESC,  BP_APOS, BP_Q,    BP_G,    BP_H,    BP_F,    BP_CCED, \
+    MO(SHORT), KC_LCTL, _______, KC_LSFT, KC_LALT, KC_LGUI, MO(NUMB),    KC_RSFT, KC_ENT,  KC_SPC,  _______, _______, _______, _______  \
   ),
 
   [NUMB] = LAYOUT( \
@@ -29,10 +31,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [SHORT] = LAYOUT( \
-    _______, _______, _______, _______,  _______, _______, _______,    _______, _______, _______, _______, _______, _______, RESET,   \
+    _______, _______, _______, _______,  _______, _______, _______,    KC_MPRV, KC_MNXT, _______, _______, _______, _______, RESET,   \
     _______, _______, KC_UP,   _______,  _______, _______, _______,    _______, _______, _______, _______, _______, _______, _______, \
-    _______, KC_LEFT, KC_DOWN, KC_RIGHT, _______, _______, _______,    _______, _______, _______, _______, _______, _______, _______, \
-    _______, _______, COPY,    PASTE,    _______, _______, _______,    _______, _______, _______, _______, _______, _______, _______  \
+    _______, KC_LEFT, KC_DOWN, KC_RIGHT, _______, _______, _______,    KC_MSTP, KC_MPLY, _______, _______, _______, _______, _______, \
+    _______, _______, COPY,    PASTE,    _______, _______, _______,    KC_VOLD, KC_VOLU, _______, _______, _______, _______, _______  \
   )
 
 };
