@@ -3,9 +3,8 @@
 #include "keymap_french.h"
 
 extern keymap_config_t keymap_config;
-
 enum custom_keycodes {
-  BASE,
+  BASE  ,
   NUMB,
   SHORT
 };
